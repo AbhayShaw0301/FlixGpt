@@ -4,7 +4,9 @@
 - Tailwind Config
 - Header
 - Login Form
+- Routing of App
 - Sign Up Form
+- Form Validation
 
 # Features
 
