@@ -1,8 +1,11 @@
 import React from 'react'
+import Body from './components/Body'
 
-function App() {
+const App = () => {
   return (
-    <div className='text-3xl text-green-300'>Hello World</div>
+    <>
+    <Body/>
+    </>
   )
 }
 

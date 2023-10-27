@@ -2,6 +2,9 @@
 
 - CRA
 - Tailwind Config
+- Header
+- Login Form
+- Sign Up Form
 
 # Features
 
