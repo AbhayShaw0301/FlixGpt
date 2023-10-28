@@ -7,6 +7,9 @@
 - Routing of App
 - Sign Up Form
 - Form Validation
+- Firebase setup
+- Deploying App to Production
+- Create A Sign Up User Account in Firebase
 
 # Features
 
