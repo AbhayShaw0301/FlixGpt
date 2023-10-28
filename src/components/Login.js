@@ -1,5 +1,6 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { checkValidData } from "../utils/isValidate";
 import Header from "./Header";
@@ -7,6 +8,8 @@ import Header from "./Header";
 const Login = () => {
   const [isSignInForm, setSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate=useNavigate();
+  const name=useRef(null);
   const email = useRef(null);
   const password = useRef(null);
   const handleButtonClick = () => {
@@ -27,7 +30,17 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log(user);
+          updateProfile(user, {
+            displayName:name.current.value, photoURL: "https://occ-0-2232-3662.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbg8b9gDW0a4RN42JzXExXzjVU1EnPFfRBh0CpUQMcu_nm6Qwk5NRIkIxLoG8I-2JRU_dt_KvqdkT3a7eTWwBv0DgbvaCZA.png?r=54ag"
+          }).then(() => {
+            // Profile updated!
+            console.log(user);
+          navigate("/browse");
+            // ...
+          }).catch((error) => {
+            setErrorMessage(error);
+          });
+          
           // ...
         })
         .catch((error) => {
@@ -42,6 +55,7 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
+          navigate("/browse");
           // ...
         })
         .catch((error) => {
@@ -76,7 +90,7 @@ const Login = () => {
         </h1>
         {!isSignInForm && (
           <input
-            // ref={name}
+            ref={name}
             type="text"
             placeholder="Name"
             className="p-4 my-4 w-full bg-gray-700"
