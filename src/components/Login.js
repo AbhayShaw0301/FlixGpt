@@ -1,14 +1,17 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { checkValidData } from "../utils/isValidate";
+import { addUser } from "../utils/userSlice";
 import Header from "./Header";
 
 const Login = () => {
   const [isSignInForm, setSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate=useNavigate();
+  const dispatch =useDispatch();
   const name=useRef(null);
   const email = useRef(null);
   const password = useRef(null);
@@ -34,7 +37,9 @@ const Login = () => {
             displayName:name.current.value, photoURL: "https://occ-0-2232-3662.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbg8b9gDW0a4RN42JzXExXzjVU1EnPFfRBh0CpUQMcu_nm6Qwk5NRIkIxLoG8I-2JRU_dt_KvqdkT3a7eTWwBv0DgbvaCZA.png?r=54ag"
           }).then(() => {
             // Profile updated!
-            console.log(user);
+            const {uid,email,displayName,photoURL} = auth.currentUser;
+            dispatch(addUser({uid,email,displayName,photoURL}));
+           
           navigate("/browse");
             // ...
           }).catch((error) => {
