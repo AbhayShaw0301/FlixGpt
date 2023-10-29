@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import { USER_LOGO } from "../utils/constant";
 import { auth } from "../utils/firebase";
 import { checkValidData } from "../utils/isValidate";
 import { addUser } from "../utils/userSlice";
@@ -33,7 +34,7 @@ const Login = () => {
           // Signed up
           const user = userCredential.user;
           updateProfile(user, {
-            displayName:name.current.value, photoURL: "https://occ-0-2232-3662.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbg8b9gDW0a4RN42JzXExXzjVU1EnPFfRBh0CpUQMcu_nm6Qwk5NRIkIxLoG8I-2JRU_dt_KvqdkT3a7eTWwBv0DgbvaCZA.png?r=54ag"
+            displayName:name.current.value, photoURL:USER_LOGO
           }).then(() => {
             // Profile updated!
             const {uid,email,displayName,photoURL} = auth.currentUser;
