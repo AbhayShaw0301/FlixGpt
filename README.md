@@ -12,6 +12,8 @@
 - Create A Sign Up User Account in Firebase
 - Implement Sign in User Api
 - Created Store with UserSlice
+- Implemented Sign Out
+- Update Profile API call
 
 # Features
 
