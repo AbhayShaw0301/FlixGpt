@@ -14,6 +14,8 @@
 - Created Store with UserSlice
 - Implemented Sign Out
 - Update Profile API call
+- BugFix: Sign Up User Display Name and Profile Pic Update
+- BugFix: If user not logged in redirect /browse to login page and vice versa.
 
 # Features
 
