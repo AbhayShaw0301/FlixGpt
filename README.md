@@ -36,3 +36,5 @@
 - FlixGpt
 - Search Bar
 - Movie Suggestions
+- Created Main Container with VideoBackground and Title
+- Built MovieList and MovieCard\*N
