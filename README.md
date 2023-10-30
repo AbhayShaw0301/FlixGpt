@@ -20,6 +20,8 @@
 - Added hardcoded values to constant file
 - Get Data from API call
 - Created movieSlice and Custom Hook for best practice
+- Created Main Container with VideoBackground and Title
+- Built MovieList and MovieCard\*N
 
 # Features
 
@@ -36,5 +38,3 @@
 - FlixGpt
 - Search Bar
 - Movie Suggestions
-- Created Main Container with VideoBackground and Title
-- Built MovieList and MovieCard\*N
