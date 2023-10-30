@@ -18,6 +18,8 @@
 - BugFix: If user not logged in redirect /browse to login page and vice versa.
 - Unsubscribe to the onauthStateChange callback
 - Added hardcoded values to constant file
+- Get Data from API call
+- Created movieSlice and Custom Hook for best practice
 
 # Features
 
