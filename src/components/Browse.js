@@ -12,9 +12,9 @@ const Browse = () => {
   useUpcomingMovies();
   
   return (<>
-    <div><Header/></div>
- <MainContainer/>
-  <SecondaryContainer/>
+    <div ><Header/></div>
+  <MainContainer/>
+  <SecondaryContainer/> 
   </>
   )
 }
