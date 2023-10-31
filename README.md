@@ -23,6 +23,7 @@
 - Created Main Container with VideoBackground and Title
 - Built MovieList and MovieCard\*N
 - Built GPT Search Button And GPT Search Suggestion Page
+- Creating a Multi Language GPT Search Page
 
 # Features
 
