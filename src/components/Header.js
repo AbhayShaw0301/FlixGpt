@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import { auth } from '../utils/firebase';
+import { toggleGptSearchView } from "../utils/gptSearchSlice";
 import { addUser, removeUser } from '../utils/userSlice';
 
 const Header = () => {
@@ -36,10 +37,15 @@ const Header = () => {
     });
 
   },[]);
+  const onToggleSearchClick=()=>{
+    dispatch(toggleGptSearchView());
+
+  }
   return (
   <div className='absolute py-2 px-8 bg-gradient-to-b from-black z-10 w-screen flex justify-between'>
   <img className='w-44 ' src={logo} alt='logo'/>
   {user && (<div className='flex'>
+    <button className='bg-purple-800 text-white text-xl   px-12  rounded' onClick={onToggleSearchClick}>Gpt Search</button>
     <img className='w-12 h-12 my-2 mx-2' src={user.photoURL} alt='userLogo'/>
     <button className='font-bond text-white' onClick={handleSignOut}>Sign Out</button>
   </div>)}

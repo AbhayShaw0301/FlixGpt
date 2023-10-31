@@ -22,6 +22,7 @@
 - Created movieSlice and Custom Hook for best practice
 - Created Main Container with VideoBackground and Title
 - Built MovieList and MovieCard\*N
+- Built GPT Search Button And GPT Search Suggestion Page
 
 # Features
 
