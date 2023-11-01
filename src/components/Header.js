@@ -47,10 +47,10 @@ const showGptSearch=useSelector((store)=>store.gpt.showGptSearch);
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="absolute py-2 px-8 bg-gradient-to-b from-black z-10 w-screen flex justify-between">
-      <img className="w-44 " src={logo} alt="logo" />
+    <div className="absolute py-2 px-8 bg-gradient-to-b from-black z-10 w-screen flex flex-col md:flex-row justify-between">
+      <img className="w-44 mx-auto md:mx-0 " src={logo} alt="logo" />
       {user && (
-        <div className="flex">
+        <div className="flex justify-between">
          {showGptSearch && (
 
             <select
@@ -72,11 +72,11 @@ const showGptSearch=useSelector((store)=>store.gpt.showGptSearch);
           
           </button>
           <img
-            className="w-12 h-12 my-2 mx-2"
+            className=" hidden md:block w-12 h-12 my-2 mx-2"
             src={user.photoURL}
             alt="userLogo"
           />
-          <button className="font-bond text-white" onClick={handleSignOut}>
+          <button className="font-bond text-white " onClick={handleSignOut}>
             Sign Out
           </button>
         </div>
