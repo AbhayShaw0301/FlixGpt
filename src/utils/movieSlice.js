@@ -20,6 +20,7 @@ import { createSlice } from "@reduxjs/toolkit";
         addUpComingMovies:(state,action)=>{
             state.upComingMovies=action.payload;
         }
+    
       
 
     }
